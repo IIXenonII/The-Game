@@ -55,6 +55,7 @@ public class Client1 {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+            // test if it works
         }
 
     }
