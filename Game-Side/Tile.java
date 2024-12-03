@@ -5,6 +5,10 @@ public abstract class Tile {
         this.cordTile = cordTile;
     }
 
+    // can use empy hash map but not going to 
+    //Collection.unmodifablemap()
+    
+
 
     public abstract boolean isThere();  // per vedere se ce qualcosa li 
 
