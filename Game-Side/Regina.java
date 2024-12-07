@@ -17,7 +17,7 @@ public class Regina extends Pezzo {
 
             posizioneMossaLegale= this.getPosizionePezzo();
             while (isPosizineLegale(posizioneMossaLegale)) {
-                if (isPrimaColonnaEsclusa(posizioneMossaLegale, offset) || isOttavaColonnaEsclusa(posizioneMossaLegale, offset)) {
+                if (isPrimaColonnaEsclusa(this.getPosizionePezzo(), offset) || isOttavaColonnaEsclusa(this.getPosizionePezzo(), offset)) {
                     break;
                 }
                 posizioneMossaLegale+= offset;

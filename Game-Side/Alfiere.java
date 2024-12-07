@@ -22,7 +22,7 @@ public class Alfiere extends Pezzo {
 
                 if (isPosizineLegale(posizioneMossaLegale)) {
 
-                    if (isPrimaColonnaEsclusa(posizioneMossaLegale, offset) || isOttavaColonnaEsclusa(posizioneMossaLegale, offset)) {
+                    if (isPrimaColonnaEsclusa(this.getPosizionePezzo(), offset) || isOttavaColonnaEsclusa(this.getPosizionePezzo(), offset)) {
                         break;
                     }
                     

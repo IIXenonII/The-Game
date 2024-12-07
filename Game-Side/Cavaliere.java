@@ -25,7 +25,7 @@ public class Cavaliere extends Pezzo {
                     isSecondaColonnaEsclusa(this.getPosizionePezzo(), i) ||
                     isSettimaColonnaEsclusa(this.getPosizionePezzo(), i) || 
                     isOttavaColonnaEsclusa(this.getPosizionePezzo(), i)) {
-                    break;
+                    continue;
                 }
 
                 Tile destinazioneValida = board.getTile(posizioneMossaLegale); // data la posizione mi da la casella che lo indica
