@@ -3,6 +3,10 @@ public class Strumenti {
     public static final boolean[] SecondaColonna = colonna(1);
     public static final boolean[] SettimaColonna = colonna(6);
     public static final boolean[] OttavaColonna = colonna(7);
+
+
+    public static final boolean[] SecondaRiga = null;
+    public static final boolean[] SettimaRiga= null;
     
     public Strumenti(){
     

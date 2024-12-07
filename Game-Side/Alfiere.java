@@ -51,12 +51,12 @@ public class Alfiere extends Pezzo {
 
     private boolean isPrimaColonnaEsclusa(int posizione_Del_Pezzo, int offset){
         // se la posizione e 0,8,16, ecc non cosideriamo alcuni offset
-        return Strumenti.PrimaColonna[posizione_Del_Pezzo]  && ((offset == -1));
+        return Strumenti.PrimaColonna[posizione_Del_Pezzo]  && ((offset == -9) || (offset == +7));
     }
 
     private boolean isOttavaColonnaEsclusa(int posizione_Del_Pezzo, int offset){
         // se la posizione e 7,15,23, ecc non cosideriamo alcuni offset
-        return Strumenti.OttavaColonna[posizione_Del_Pezzo]  && ((offset == +1) );
+        return Strumenti.OttavaColonna[posizione_Del_Pezzo]  && ((offset == 9) || (offset == -7));
     }
 
 

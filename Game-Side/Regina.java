@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Torre extends Pezzo{
-    private int[] possibiliMosse = {1, -1, 8, -8};
+public class Regina extends Pezzo {
 
-    public Torre(int posizionePezzo, Colore colorePezzo) {
+    private int[] possibiliMosse= {-9, -7, 7, 9, 1, -1, 8, -8};
+
+    public Regina(int posizionePezzo, Colore colorePezzo) {
         super(posizionePezzo, colorePezzo);
     }
 
@@ -13,6 +14,7 @@ public class Torre extends Pezzo{
         List<Mossa> mosseLegali = new ArrayList<>();
         int posizioneMossaLegale;
         for(int offset : possibiliMosse){
+
             posizioneMossaLegale= this.getPosizionePezzo();
             while (isPosizineLegale(posizioneMossaLegale)) {
                 if (isPrimaColonnaEsclusa(posizioneMossaLegale, offset) || isOttavaColonnaEsclusa(posizioneMossaLegale, offset)) {
@@ -35,20 +37,17 @@ public class Torre extends Pezzo{
                 };
             }
         }
-
-
-
         return mosseLegali;
     }
 
     private boolean isPrimaColonnaEsclusa(int posizione_Del_Pezzo, int offset){
         // se la posizione e 0,8,16, ecc non cosideriamo alcuni offset
-        return Strumenti.PrimaColonna[posizione_Del_Pezzo]  && ((offset == -1));
+        return Strumenti.PrimaColonna[posizione_Del_Pezzo]  && ((offset == -9) || (offset == +7) || (offset == -1));
     }
 
     private boolean isOttavaColonnaEsclusa(int posizione_Del_Pezzo, int offset){
         // se la posizione e 7,15,23, ecc non cosideriamo alcuni offset
-        return Strumenti.OttavaColonna[posizione_Del_Pezzo]  && ((offset == 1));
+        return Strumenti.OttavaColonna[posizione_Del_Pezzo]  && ((offset == 9) || (offset == -7) || (offset == +1));
     }
     
 }
