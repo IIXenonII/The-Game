@@ -59,5 +59,10 @@ public class Alfiere extends Pezzo {
         return Strumenti.OttavaColonna[posizione_Del_Pezzo]  && ((offset == 9) || (offset == -7));
     }
 
+    @Override
+    public String toString() {
+        return  TipoPezzo.AlFIRE.toString();
+    }
+
 
 }

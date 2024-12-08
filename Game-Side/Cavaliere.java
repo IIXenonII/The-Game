@@ -47,6 +47,11 @@ public class Cavaliere extends Pezzo {
         return mosseLegali;
     }
 
+    @Override
+    public String toString() {
+        return  TipoPezzo.CAVALIERE.toString();
+    }
+
     private boolean isPrimaColonnaEsclusa(int posizione_Del_Pezzo, int offset){
         // se la posizione e 0,8,16, ecc non cosideriamo alcuni offset
         return Strumenti.PrimaColonna[posizione_Del_Pezzo]  && ((offset == -17) || (offset == -10) || (offset == 6) || (offset == 15));

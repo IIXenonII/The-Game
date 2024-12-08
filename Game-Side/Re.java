@@ -44,5 +44,9 @@ public class Re extends Pezzo {
         // se la posizione e 7,15,23, ecc non cosideriamo alcuni offset
         return Strumenti.OttavaColonna[posizione_Del_Pezzo]  && ((offset == 9) || (offset == -7) || (offset == +1));
     }
+    @Override
+    public String toString() {
+        return  TipoPezzo.RE.toString();
+    }
     
 }

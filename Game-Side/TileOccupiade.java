@@ -6,6 +6,10 @@ public class TileOccupiade extends Tile {
         this.cosoSulQuad = cosoSulQuad;
     }
 
+    public String toString(){
+        return  this.getPezzo().getColorePezzo().isNero() ? this.getPezzo().toString().toLowerCase() : this.getPezzo().toString();
+    }
+
     @Override
     public boolean isThere() {
         return true;
@@ -15,5 +19,6 @@ public class TileOccupiade extends Tile {
     public Pezzo getPezzo() {
         return cosoSulQuad;
     }
+
 
 }

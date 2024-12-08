@@ -5,11 +5,20 @@ public class Strumenti {
     public static final boolean[] OttavaColonna = colonna(7);
 
 
-    public static final boolean[] SecondaRiga = null;
-    public static final boolean[] SettimaRiga= null;
+    public static final boolean[] SecondaRiga = riga(8);
+    public static final boolean[] SettimaRiga= riga(48);
     
     public Strumenti(){
     
+    }
+
+    private static boolean[] riga(int rigaNum) {
+        boolean[] riga = new boolean[64];
+        while(rigaNum % 8 != 0){
+            riga[rigaNum] = true;
+            rigaNum ++;
+        }
+        return riga;
     }
     
     private static boolean[] colonna(int colonnaNum) {

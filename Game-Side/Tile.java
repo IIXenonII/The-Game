@@ -1,12 +1,32 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public abstract class Tile {
     int cordTile;
+    static Map<Integer, TileEmpty> casellaVuote = creaTutteCaselleLibere();
 
     public Tile(int cordTile) {
         this.cordTile = cordTile;
     }
 
-    // can use empy hash map but not going to 
-    //Collection.unmodifablemap()
+    private static Map<Integer, TileEmpty> creaTutteCaselleLibere(){
+        Map<Integer, TileEmpty> caselleLibereMap = new HashMap<>();
+
+        for (int i = 0; i < 64; i++) {
+            caselleLibereMap.put(i, new TileEmpty(i));
+        }
+
+        return caselleLibereMap;
+    }
+
+    public static Tile creaCasella(int cordTile, Pezzo pezzo){
+        if (pezzo != null){
+            return new TileOccupiade(cordTile, pezzo);
+        }
+        else{
+            return casellaVuote.get(cordTile);
+        }
+    }
     
 
 

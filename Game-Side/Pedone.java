@@ -67,5 +67,9 @@ public class Pedone extends Pezzo {
 
         return mosseLegali;
     }
+    @Override
+    public String toString() {
+        return  TipoPezzo.PEDONE.toString();
+    }
     
 }

@@ -3,6 +3,10 @@ public class TileEmpty extends Tile{
         super(cordTile);
     }
 
+    public String toString(){
+        return "-";
+    }
+
     @Override
     public boolean isThere() {
         return false;

@@ -21,20 +21,23 @@ public class Regina extends Pezzo {
                     break;
                 }
                 posizioneMossaLegale+= offset;
-                Tile destinazioneValida = board.getTile(posizioneMossaLegale); // data la posizione mi da la casella che lo indica
-                // checa se quella casella non e occupata o
-                if (!destinazioneValida.getClass().equals(TileOccupiade.class)) {
-                    mosseLegali.add(new MossaMovimento(board, this, posizioneMossaLegale));
-                }
-                else{
-                    Pezzo pezzoDestinazione = destinazioneValida.getPezzo();
-                    if (this.getColorePezzo() != pezzoDestinazione.getColorePezzo()) {
-                        mosseLegali.add(new MossaAttacante(board, this, posizioneMossaLegale, pezzoDestinazione));
-                        // come uccidere pezzo
-                        // to be continued
+                if (isPosizineLegale(posizioneMossaLegale)) {
+                    Tile destinazioneValida = board.getTile(posizioneMossaLegale); // data la posizione mi da la casella che lo indica
+                    // checa se quella casella non e occupata o
+                    if (!destinazioneValida.getClass().equals(TileOccupiade.class)) {
+                        mosseLegali.add(new MossaMovimento(board, this, posizioneMossaLegale));
                     }
-                    break; // faccio break dato che se in mezzo alla linea obliqua c'è un pezzo non posso oltre passarlo
-                };
+                    else{
+                        Pezzo pezzoDestinazione = destinazioneValida.getPezzo();
+                        if (this.getColorePezzo() != pezzoDestinazione.getColorePezzo()) {
+                            mosseLegali.add(new MossaAttacante(board, this, posizioneMossaLegale, pezzoDestinazione));
+                            // come uccidere pezzo
+                            // to be continued
+                        }
+                        break; // faccio break dato che se in mezzo alla linea obliqua c'è un pezzo non posso oltre passarlo
+                    };    
+                }
+                
             }
         }
         return mosseLegali;
@@ -48,6 +51,10 @@ public class Regina extends Pezzo {
     private boolean isOttavaColonnaEsclusa(int posizione_Del_Pezzo, int offset){
         // se la posizione e 7,15,23, ecc non cosideriamo alcuni offset
         return Strumenti.OttavaColonna[posizione_Del_Pezzo]  && ((offset == 9) || (offset == -7) || (offset == +1));
+    }
+    @Override
+    public String toString() {
+        return  TipoPezzo.REGINE.toString();
     }
     
 }
