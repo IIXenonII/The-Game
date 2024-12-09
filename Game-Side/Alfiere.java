@@ -64,5 +64,10 @@ public class Alfiere extends Pezzo {
         return  TipoPezzo.AlFIRE.toString();
     }
 
+    @Override
+    public Alfiere muoviPezzo(Mossa mossa) {
+        return new Alfiere(mossa.getDestinazionePezzo(), mossa.getPezzoMosso().getColorePezzo());
+    }
+
 
 }

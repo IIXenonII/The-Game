@@ -48,5 +48,9 @@ public class Re extends Pezzo {
     public String toString() {
         return  TipoPezzo.RE.toString();
     }
+
+    public Re muoviPezzo(Mossa mossa) {
+        return new Re(mossa.getDestinazionePezzo(), mossa.getPezzoMosso().getColorePezzo());
+    }
     
 }

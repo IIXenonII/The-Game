@@ -71,5 +71,8 @@ public class Cavaliere extends Pezzo {
         // se la posizione e 7,15,23, ecc non cosideriamo alcuni offset
         return Strumenti.OttavaColonna[posizione_Del_Pezzo]  && ((offset == +17) || (offset == +10) || (offset == -6) || (offset == -15));
     }
+    public Cavaliere muoviPezzo(Mossa mossa) {
+        return new Cavaliere(mossa.getDestinazionePezzo(), mossa.getPezzoMosso().getColorePezzo());
+    }
     
 }

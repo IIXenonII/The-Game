@@ -57,5 +57,9 @@ public class Torre extends Pezzo{
         // se la posizione e 7,15,23, ecc non cosideriamo alcuni offset
         return Strumenti.OttavaColonna[posizione_Del_Pezzo]  && ((offset == 1));
     }
+
+    public Torre muoviPezzo(Mossa mossa) {
+        return new Torre(mossa.getDestinazionePezzo(), mossa.getPezzoMosso().getColorePezzo());
+    }
     
 }

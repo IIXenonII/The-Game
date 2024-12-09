@@ -31,7 +31,7 @@ public abstract class Giocatore {
 
     private Re confermaRe() {
         for (Pezzo pezzo : getPezziAttivi()){
-            if (pezzo.getClass().equals(Re.class)) {
+            if (pezzo.getClass() == Re.class) {
                 return (Re)pezzo; 
             }
         }

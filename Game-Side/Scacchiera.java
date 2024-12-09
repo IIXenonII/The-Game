@@ -22,7 +22,7 @@ public class Scacchiera {
 
         this.giocatoreBianco= new GiocatoreBianco(this, mosseLegaliBianche, mosseLegaliNere);
         this.giocatoreNero = new GiocatoreNero(this, mosseLegaliNere, mosseLegaliBianche);
-        this.giocatoreAdesso = null;
+        this.giocatoreAdesso = costruttore.prossimoMuovere.segniGiocatore(this.giocatoreBianco, this.giocatoreNero);
     }
 
     public Giocatore getGiocatoreAdesso(){

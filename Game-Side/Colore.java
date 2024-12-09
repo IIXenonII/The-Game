@@ -15,6 +15,11 @@ public enum Colore {
             return false;
         }
 
+        @Override
+        protected Giocatore segniGiocatore(GiocatoreBianco giocatoreBianco, GiocatoreNero giocatoreNero) {
+            return giocatoreBianco;
+        }
+
     },
     BIANCO{
         public int getDirezione(){
@@ -32,6 +37,11 @@ public enum Colore {
             return true;
         }
 
+        @Override
+        protected Giocatore segniGiocatore(GiocatoreBianco giocatoreBianco, GiocatoreNero giocatoreNero) {
+            return giocatoreNero;
+        }
+
     };
 
     public abstract int getDirezione();
@@ -39,6 +49,8 @@ public enum Colore {
     protected abstract boolean isNero();
 
     protected abstract boolean isBianco();
+
+    protected abstract Giocatore segniGiocatore(GiocatoreBianco giocatoreBianco, GiocatoreNero giocatoreNero);
 
 
 }

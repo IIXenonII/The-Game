@@ -56,5 +56,9 @@ public class Regina extends Pezzo {
     public String toString() {
         return  TipoPezzo.REGINE.toString();
     }
+
+    public Regina muoviPezzo(Mossa mossa) {
+        return new Regina(mossa.getDestinazionePezzo(), mossa.getPezzoMosso().getColorePezzo());
+    }
     
 }

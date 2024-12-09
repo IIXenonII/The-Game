@@ -13,6 +13,8 @@ public abstract class Pezzo {
         this.isPrimaMossa = true;
     }
 
+    public abstract Pezzo muoviPezzo(Mossa mossa);
+
     public abstract List<Mossa> calcolaSeMossaELegale(Scacchiera board);
 
     public boolean isPosizineLegale(int posizioneRicevuta) {

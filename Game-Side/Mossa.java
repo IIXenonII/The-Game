@@ -1,7 +1,7 @@
 public abstract class Mossa {
-    private Scacchiera scacchiera;
-    private Pezzo pezzoMosso;
-    private int destinazionePezzo;
+    protected Scacchiera scacchiera;
+    protected Pezzo pezzoMosso;
+    protected int destinazionePezzo;
 
 
     public Mossa(Scacchiera scacchiera, Pezzo pezzoMosso, int destinazionePezzo) {
@@ -15,4 +15,9 @@ public abstract class Mossa {
     }
 
     protected abstract Scacchiera eseguisci();
+
+
+    public Pezzo getPezzoMosso() {
+        return pezzoMosso;
+    }
 }

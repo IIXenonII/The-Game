@@ -71,5 +71,9 @@ public class Pedone extends Pezzo {
     public String toString() {
         return  TipoPezzo.PEDONE.toString();
     }
+
+    public Pedone muoviPezzo(Mossa mossa) {
+        return new Pedone(mossa.getDestinazionePezzo(), mossa.getPezzoMosso().getColorePezzo());
+    }
     
 }
