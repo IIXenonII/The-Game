@@ -3,10 +3,16 @@ public abstract class Mossa {
     private Pezzo pezzoMosso;
     private int destinazionePezzo;
 
+
     public Mossa(Scacchiera scacchiera, Pezzo pezzoMosso, int destinazionePezzo) {
         this.scacchiera = scacchiera;
         this.pezzoMosso = pezzoMosso;
         this.destinazionePezzo = destinazionePezzo;
     }
-    
+
+    public int getDestinazionePezzo() {
+        return destinazionePezzo;
+    }
+
+    protected abstract Scacchiera eseguisci();
 }

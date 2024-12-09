@@ -5,6 +5,12 @@ public class MossaAttacante extends Mossa {
         super(scacchiera, pezzoMosso, destinazionePezzo);
         this.pezzoAttacato = pezzoAttacato;
         
+    }
+
+    @Override
+    protected Scacchiera eseguisci() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'eseguisci'");
     } 
     
 }

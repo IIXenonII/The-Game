@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -9,6 +8,10 @@ public class Scacchiera {
     private Collection<Pezzo> pezziBianchi;
     private Collection<Pezzo> pezziNeri;
 
+    private Giocatore giocatoreAdesso;
+    private GiocatoreNero giocatoreNero;
+    private GiocatoreBianco giocatoreBianco;
+
     public Scacchiera (Costruttore costruttore){
         scacchieraGioco = creaScachiera(costruttore);
         this.pezziBianchi = calcolaPezziVivi(scacchieraGioco, Colore.BIANCO);
@@ -16,6 +19,14 @@ public class Scacchiera {
 
         Collection<Mossa> mosseLegaliNere = calcolaMosseLegali(this.pezziNeri);
         Collection<Mossa> mosseLegaliBianche = calcolaMosseLegali(this.pezziBianchi);
+
+        this.giocatoreBianco= new GiocatoreBianco(this, mosseLegaliBianche, mosseLegaliNere);
+        this.giocatoreNero = new GiocatoreNero(this, mosseLegaliNere, mosseLegaliBianche);
+        this.giocatoreAdesso = null;
+    }
+
+    public Giocatore getGiocatoreAdesso(){
+        return this.giocatoreAdesso;
     }
 
     private Collection<Mossa> calcolaMosseLegali(Collection<Pezzo> pezzi) {
@@ -110,10 +121,20 @@ public class Scacchiera {
         return b.toString();
     }
 
-    
+    public Collection<Pezzo> getPezziBianchi() {
+        return pezziBianchi;
+    }
 
-    
+    public Collection<Pezzo> getPezziNeri() {
+        return pezziNeri;
+    }
 
+    public GiocatoreNero getGiocatoreNero() {
+        return giocatoreNero;
+    }
 
-    
+    public GiocatoreBianco getGiocatoreBianco() {
+        return giocatoreBianco;
+    }
+
 }
