@@ -3,6 +3,8 @@ import java.util.Map;
 
 public abstract class Tile {
     int cordTile;
+    
+
     static Map<Integer, TileEmpty> casellaVuote = creaTutteCaselleLibere();
 
     public Tile(int cordTile) {
@@ -28,8 +30,9 @@ public abstract class Tile {
         }
     }
     
-
-
+    public int getCordTile() {
+        return cordTile;
+    }
     public abstract boolean isThere();  // per vedere se ce qualcosa li 
 
     public abstract Pezzo getPezzo(); // da il pezzo

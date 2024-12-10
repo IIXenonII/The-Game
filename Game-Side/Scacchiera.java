@@ -137,4 +137,10 @@ public class Scacchiera {
         return giocatoreBianco;
     }
 
+    public Collection<Mossa> getTutteMosseLegali() {
+        Collection<Mossa> tutteMosseLegali = this.getGiocatoreBianco().getMosseLegali();
+        tutteMosseLegali.addAll(this.getGiocatoreNero().getMosseLegali());
+        return tutteMosseLegali;
+    }
+
 }

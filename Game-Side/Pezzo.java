@@ -33,6 +33,26 @@ public abstract class Pezzo {
         return isPrimaMossa;
     }
 
+    public boolean equals(Object obj){
+        if(this == obj){
+            return true;
+        }
+        if (!(obj instanceof Pezzo)) {
+            return false;
+        }
+        Pezzo pezzoObj = (Pezzo) obj;
+        return this.getColorePezzo() == pezzoObj.getColorePezzo() && this.getClass() == pezzoObj.getClass()
+                && this.isPrimaMossa() == pezzoObj.isPrimaMossa() && this.getPosizionePezzo() == pezzoObj.getPosizionePezzo();
+    }
+
+    @Override
+    // this
+    public int hashCode() {
+        return this.getClass().hashCode();
+    }
+
+    
+
     
 
 }

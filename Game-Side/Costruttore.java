@@ -23,5 +23,10 @@ public class Costruttore {
     public Scacchiera crea(){
         return new Scacchiera(this);
     }
+
+    public void setEnPassantPedone(Pedone pedoneMosso) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setEnPassantPedone'");
+    }
     
 }
