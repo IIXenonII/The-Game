@@ -1,5 +1,6 @@
 package GUI;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,15 +10,21 @@ import javax.swing.*;
 
 public class Tabella {
     private JFrame frameGioco;
-    private static Dimension bordoEsterno = new Dimension(600, 600)  ; 
+    private static Dimension bordoEsterno = new Dimension(600, 600); 
+    private PanelloScacchiera panelloScacchiera;
 
     public Tabella() {
         this.frameGioco = new JFrame("Scacchi");
+        this.frameGioco.setLayout(new BorderLayout());
         JMenuBar barraMenu = inizializzaBarraMenu();
-        
-        this.frameGioco.setSize(bordoEsterno);
-        this.frameGioco.setVisible(true);
         this.frameGioco.setJMenuBar(barraMenu);
+        this.frameGioco.setSize(bordoEsterno);
+
+        this.panelloScacchiera = new PanelloScacchiera();
+        this.frameGioco.add(this.panelloScacchiera, BorderLayout.CENTER );
+
+        this.frameGioco.setVisible(true);
+        
     }
 
     private JMenuBar inizializzaBarraMenu() {

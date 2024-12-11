@@ -10,11 +10,11 @@ public class PanelloScacchiera extends JPanel{
     private List<PanelloTile> caselleScacchiera;
     private Dimension dimensioneScacchiera= new Dimension(400, 350);
 
-    public PanelloScacchiera(){
+    PanelloScacchiera(){
         super(new GridLayout(8, 8));
         this.caselleScacchiera = new ArrayList<>();
         for (int i = 0; i < 64; i++) {
-            PanelloTile panelloTile = new PanelloTile();
+            PanelloTile panelloTile = new PanelloTile(this,  i);
             caselleScacchiera.add(panelloTile);
             // Lo mette nella gui
             add(panelloTile);

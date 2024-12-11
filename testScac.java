@@ -1,4 +1,5 @@
 import GUI.Tabella;
+import GameSide.Scacchiera;
 
 public class testScac {
     public static void main(String[] args) {
@@ -9,3 +10,4 @@ public class testScac {
         Tabella t = new Tabella();
     }
 }
+ 
