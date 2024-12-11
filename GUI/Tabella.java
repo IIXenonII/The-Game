@@ -25,8 +25,8 @@ public class Tabella {
     private JFrame frameGioco;
     private static Dimension bordoEsterno = new Dimension(600, 600); 
     private PanelloScacchiera panelloScacchiera;
-    public Scacchiera scacchiera;
-    String IconaPezzo="";
+    public final Scacchiera scacchiera;
+    private String pathDefaultIconaPezzo="arte/";
     
     public Scacchiera getScacchiera() {
         return scacchiera;
@@ -36,10 +36,10 @@ public class Tabella {
     public Tabella() {
         this.frameGioco = new JFrame("Scacchi");
         this.frameGioco.setLayout(new BorderLayout());
-        JMenuBar barraMenu = inizializzaBarraMenu();
+        final JMenuBar barraMenu = inizializzaBarraMenu();
         this.frameGioco.setJMenuBar(barraMenu);
-        this.scacchiera = Scacchiera.scacchieraStandard();
         this.frameGioco.setSize(bordoEsterno);
+        this.scacchiera = Scacchiera.scacchieraStandard();
         this.panelloScacchiera = new PanelloScacchiera();
         this.frameGioco.add(this.panelloScacchiera, BorderLayout.CENTER );
         this.frameGioco.setVisible(true);
@@ -118,12 +118,12 @@ public class Tabella {
             if (scacchiera.getTile(this.tileID).isThere()) {
                 
                 try {
-                    BufferedImage imagine = 
-                        ImageIO.read(new File(IconaPezzo+ scacchiera.getTile(this.tileID).getPezzo().getColorePezzo().toString().substring(0,1) + 
+                    final BufferedImage imagine = 
+                        ImageIO.read(new File(pathDefaultIconaPezzo + scacchiera.getTile(this.tileID).getPezzo().getColorePezzo().toString().substring(0,1) + 
                         scacchiera.getTile(this.tileID).getPezzo().toString() + ".gif"));
                     this.add(new JLabel(new ImageIcon(imagine)));
                     } catch (IOException e) {
-                    e.printStackTrace();
+                        e.printStackTrace();
                 }
                 
             }

@@ -21,6 +21,9 @@ public enum Colore {
         protected Giocatore segniGiocatore(GiocatoreBianco giocatoreBianco, GiocatoreNero giocatoreNero) {
             return giocatoreBianco;
         }
+        public String toString(){
+            return "B";
+        }
 
     },
     BIANCO{
@@ -42,6 +45,10 @@ public enum Colore {
         @Override
         protected Giocatore segniGiocatore(GiocatoreBianco giocatoreBianco, GiocatoreNero giocatoreNero) {
             return giocatoreNero;
+        }
+
+        public String toString(){
+            return "W";
         }
 
     };

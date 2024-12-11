@@ -5,7 +5,7 @@ public enum TipoPezzo {
     AlFIRE("A"),
     TORRE("T"),
     REGINE("R"),
-    RE("$"),
+    RE("S"),
     CAVALIERE("C");
 
     private String nomePezzo;
