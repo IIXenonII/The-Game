@@ -7,15 +7,15 @@ public abstract class Giocatore {
     private Collection<Mossa> mosseLegali;
     
     protected Re reGiocatore;
-    
 
     private boolean scacco;
 
     public Giocatore(Scacchiera board, Collection<Mossa> mosseLegali, Collection<Mossa> mosseLegaliAvversario) {
         this.board = board;
+        this.reGiocatore = this.confermaRe();
         mosseLegali.addAll(calcolaReArrocato(mosseLegali, mosseLegaliAvversario));
         this.mosseLegali = mosseLegali;
-        this.reGiocatore = confermaRe();    
+        
         // vede se ci sono nella lista di mosse avversarie delle mosse che puntano dove è il re
         this.scacco = !Giocatore.calcolaSeAttacciCassella(this.reGiocatore.getPosizionePezzo(), mosseLegaliAvversario).isEmpty();        
     }
@@ -30,8 +30,8 @@ public abstract class Giocatore {
         return mosseAttacanti;
     }
 
-    private Re confermaRe() {
-        for (Pezzo pezzo : getPezziAttivi()){
+    public Re confermaRe() {
+        for (Pezzo pezzo : this.getPezziAttivi()){
             if (pezzo.getClass() == Re.class) {
                 return (Re)pezzo; 
             }
@@ -100,7 +100,7 @@ public abstract class Giocatore {
     }
 
     public Re getReGiocatore() {
-        return reGiocatore;
+        return this.reGiocatore;
     }
 
 }

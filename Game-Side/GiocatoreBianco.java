@@ -28,7 +28,7 @@ public class GiocatoreBianco extends Giocatore {
             Collection<Mossa> giocateAversarioLegali) {
         List<Mossa> reArrocato = new ArrayList<>();
 
-        if (this.reGiocatore.isPrimaMossa() && !this.isScacco()) {
+        if (this.getReGiocatore().isPrimaMossa() && !this.isScacco()) {
 
             // Dalla parte del Re
             // vedo se ce tra il re e la torre ci sono dei pezzi

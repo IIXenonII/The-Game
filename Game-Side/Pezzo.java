@@ -10,7 +10,7 @@ public abstract class Pezzo {
         this.posizionePezzo = posizionePezzo;
         this.colorePezzo = colorePezzo;
 
-        this.isPrimaMossa = true;
+        this.isPrimaMossa = false;
     }
 
     public abstract Pezzo muoviPezzo(Mossa mossa);
