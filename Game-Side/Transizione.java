@@ -2,6 +2,7 @@
 public class Transizione {
 
     private Scacchiera scacchieraTransizione;
+    @SuppressWarnings("unused")
     private Mossa mossa;
     private StatusMossa statusMossa;
     public Transizione(Scacchiera scacchieraTransizione, Mossa mossa, StatusMossa statusMossa) {
