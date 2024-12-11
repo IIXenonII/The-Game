@@ -119,7 +119,7 @@ public class Tabella {
                 
                 try {
                     final BufferedImage imagine = 
-                        ImageIO.read(new File(pathDefaultIconaPezzo + scacchiera.getTile(this.tileID).getPezzo().getColorePezzo().toString().substring(0,1) + 
+                        ImageIO.read(new File(pathDefaultIconaPezzo + scacchiera.getTile(this.tileID).getPezzo().getColorePezzo().toString() + 
                         scacchiera.getTile(this.tileID).getPezzo().toString() + ".gif"));
                     this.add(new JLabel(new ImageIcon(imagine)));
                     } catch (IOException e) {
