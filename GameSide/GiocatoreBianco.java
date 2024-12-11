@@ -48,7 +48,10 @@ public class GiocatoreBianco extends Giocatore {
             // Dalla parte della Regina
             if (!this.board.getTile(57).isThere() && this.board.getTile(58).isThere() && this.board.getTile(59).isThere() ) {
                 Tile torre= this.board.getTile(56);
-                if (torre.isThere() &&  torre.getPezzo().isPrimaMossa()){
+                if (torre.isThere() &&  torre.getPezzo().isPrimaMossa() &&
+                    Giocatore.calcolaSeAttacciCassella(58, this.getAvversario().getMosseLegali()).isEmpty()&&
+                    Giocatore.calcolaSeAttacciCassella(59, this.getAvversario().getMosseLegali()).isEmpty() && 
+                    torre.getPezzo().getClass() == Torre.class){
                     reArrocato.add(new MossaArrocoDaRegina(this.board, this.reGiocatore, 58, (Torre)torre.getPezzo(), torre.getCordTile(), 59));
                 }
             }

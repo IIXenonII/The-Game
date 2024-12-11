@@ -28,8 +28,8 @@ public class Pedone extends Pezzo {
                 // to be continued (promozine e en passant)
             }
             else if (offset == 16 && this.isPrimaMossa() && 
-                    (Strumenti.SecondaRiga[this.getPosizionePezzo()] && this.getColorePezzo().isNero() ||
-                    Strumenti.SecondaRiga[this.getPosizionePezzo()] && this.getColorePezzo().isBianco()) ) {
+                    (Strumenti.SettimoRank[this.getPosizionePezzo()] && this.getColorePezzo().isNero() ||
+                    Strumenti.SettimoRank[this.getPosizionePezzo()] && this.getColorePezzo().isBianco()) ) {
                     // vedo se tra il salto c'è qualche pezzo
                 int posizioneIntermedia = this.getPosizionePezzo() + (this.getColorePezzo().getDirezione()* 8);
                 if (board.getTile(posizioneMossaLegale).getClass().equals(TileEmpty.class) && 

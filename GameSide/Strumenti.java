@@ -6,9 +6,14 @@ public class Strumenti {
     public static final boolean[] SettimaColonna = colonna(6);
     public static final boolean[] OttavaColonna = colonna(7);
 
-
-    public static final boolean[] SecondaRiga = riga(8);
-    public static final boolean[] SettimaRiga= riga(48);
+    public static final boolean[] OttavoRank= riga(0);
+    public static final boolean[] SettimoRank = riga(8);
+    public static final boolean[] SestoRank= riga(16);
+    public static final boolean[] QuintoRank= riga(24);
+    public static final boolean[] QuartoRank= riga(32);
+    public static final boolean[] TerzoRank= riga(40);
+    public static final boolean[] SecondaRank= riga(48);
+    public static final boolean[] PrimoRank= riga(56);
     
     public Strumenti(){
     

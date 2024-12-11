@@ -45,6 +45,17 @@ public class Tabella {
             }
         );
         fileMenu.add(apriPNG);
+        JMenuItem esciMenuItem = new JMenuItem("Esci");
+        esciMenuItem.addActionListener(
+            new ActionListener(){
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    System.exit(0);
+                }
+
+            }
+        );
+        fileMenu.add(esciMenuItem);
         return fileMenu;
     }
 
